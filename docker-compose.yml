@@ -1,0 +1,27 @@
+version: "3"
+
+
+services:
+  web-wallet:
+    build: .
+
+    container_name: build-wallet-ui
+
+    ports:
+      - "127.0.0.1:8080:80"
+
+    volumes:
+      - .:/aegis-ui
+      - ./www:/var/www
+      - ./www:/aegis-ui/web/dist
+
+    working_dir: /aegis-ui
+    tty: true # interactive mode
+    stdin_open: true # interactive mode
+ 
+    command:
+      - "cd web && npm install && npm run build && npm start"
+
+    entrypoint:  
+      - /bin/bash
+      - -c
