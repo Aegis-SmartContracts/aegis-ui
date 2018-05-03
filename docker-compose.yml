@@ -5,10 +5,10 @@ services:
   web-wallet:
     build: .
 
-    container_name: build-wallet-ui
+    container_name: web-wallet
 
     ports:
-      - "127.0.0.1:8080:80"
+      - "172.17.0.1:8080:80"
 
     volumes:
       - .:/aegis-ui
@@ -20,7 +20,7 @@ services:
     stdin_open: true # interactive mode
  
     command:
-      - "cd web && npm install && npm run build && npm start"
+      - "cd web && npm install && npm run build && nginx -g \"daemon off;\""
 
     entrypoint:  
       - /bin/bash

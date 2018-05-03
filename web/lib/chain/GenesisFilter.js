@@ -103,9 +103,9 @@ export default class GenesisFilter {
                             return
                         }
                         var currentKey = keys.public_keys[k]
-                        if( /^GPH/.test(currentKey) ) currentKey = "BTS" + currentKey.substring(3)
+                        if( /^GPH/.test(currentKey) ) currentKey = "AGS" + currentKey.substring(3)
                         if(this.inGenesis( currentKey )) continue
-                        var addresses = key.addresses(currentKey, 'BTS')
+                        var addresses = key.addresses(currentKey, 'AGS')
                         var addy_found = false
                         for(var i = 0; i < addresses.length; i++) {
                             if(this.inGenesis( addresses[i] )) {

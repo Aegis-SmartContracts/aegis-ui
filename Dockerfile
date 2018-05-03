@@ -10,8 +10,8 @@ RUN npm install -g cross-env
 
 # We copy the code from the docker-compose-yml
 # RUN git clone https://github.com/bitshares/bitshares-ui.git /bitshares-ui
-#CMD mkdir /bitshares-ui
-WORKDIR /bitshares-ui
+#CMD mkdir /aegis-ui
+WORKDIR /aegis-ui
 
 #ADD package.json .
 #RUN cross-env npm install --env.prod

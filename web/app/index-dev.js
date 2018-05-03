@@ -2,6 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import utils from "./dl_cli_index";
+import {ChainConfig} from "bitsharesjs-ws";
+
+ChainConfig.address_prefix = "AGS";
+ChainConfig.core_asset = "AGS";
+ChainConfig.networks.AEgis = {
+    address_prefix: "AGS",
+    chain_id: "a1f1444cc2cca678d452e9cdb7daefa4a1b2567a5f0aa09eaa846d759f827e3e"
+};
+
 if (window) {
     window.$utils = utils;
 };
